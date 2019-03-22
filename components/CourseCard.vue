@@ -10,7 +10,7 @@
         <span v-html="course.acf.course_description"></span>
       </div>
       <div class="course-card-footer text-center pt-3 pt-md-5 flex-shrink-1">
-        <a class="btn btn-lg primary-btn-fill mx-auto" href="#">Start Course</a>
+        <a class="btn btn-lg primary-btn-fill mx-auto" :href="`/modules/${course.id}`">Start Course</a>
       </div>
     </div>
   </div>

@@ -17,7 +17,7 @@
       </div>
 
       <!-- View Courses Button -->
-      <a class="d-none d-lg-block ml-2 pr-4" href="#">
+      <a class="d-none d-lg-block ml-2 pr-4" href="/">
         <!-- {{ source('assets/menu/courses_navbar_icon.svg') }} -->
         <span class="ml-2">View Courses</span>
       </a>
