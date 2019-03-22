@@ -11,6 +11,7 @@
         </div>
       </div>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -18,6 +19,7 @@
 import HeaderBand from '../components/HeaderBand'
 import CourseCard from '../components/CourseCard'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 import axios from 'axios'
 
@@ -25,7 +27,8 @@ export default {
   components: {
     Navbar,
     HeaderBand,
-    CourseCard
+    CourseCard,
+    Footer
   },
   async asyncData({ params }) {
     const courses = await axios.get(
