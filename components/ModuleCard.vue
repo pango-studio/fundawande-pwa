@@ -15,7 +15,7 @@
                   <h5
                     :class="moduleText"
                     class="module-progress d-none d-sm-block"
-                  >0/0 Units Completed</h5>
+                  >0/{{module.units.length}} Units Completed</h5>
                 </div>
               </div>
               <hr>
@@ -28,14 +28,11 @@
                 <img
                   width="100px"
                   class="img img-responsive d-none d-md-block p-3"
-                  src="/wp-content/themes/fundawande/assets/arrow_right.svg"
+                  src="~/assets/svg/arrow_right.svg"
                 >
                 <h5 class="text-center my-0">
                   Go to Module
-                  <img
-                    class="p-2 d-md-none"
-                    src="/wp-content/themes/fundawande/assets/arrow_right.svg"
-                  >
+                  <img class="p-2 d-md-none" src="~/assets/svg/arrow_right.svg">
                 </h5>
               </div>
             </div>
