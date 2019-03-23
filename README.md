@@ -1,6 +1,6 @@
 # fw-vue
 
-> Learning about Nuxt while building a Vue version of the Funda Wande app
+A progressive web app version of the Funda Wande learning environment built with Nuxt.js and the WordPress Rest API
 
 ## Build Setup
 
@@ -18,5 +18,3 @@ $ npm start
 # generate static project
 $ npm run generate
 ```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
