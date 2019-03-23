@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row my-md-5">
           <div class="col-12 mt-3" v-for="module in modules" v-bind:key="module.id">
-            <ModuleCard v-bind:module="module"></ModuleCard>
+            <ModuleCard v-bind:module="module" v-bind:course="course"></ModuleCard>
           </div>
         </div>
       </div>

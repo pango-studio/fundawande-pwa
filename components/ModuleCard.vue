@@ -1,6 +1,6 @@
 <template>
   <div id="module-card" class="my-3 d-inline-block w-100">
-    <a class="module-link" href="#">
+    <a class="module-link" :href="`/units/course_id=${course.id}&module_id=${module.term_id}`">
       <div class="card">
         <div class="card-body">
           <div class="row">
@@ -47,6 +47,7 @@
 export default {
   name: 'Module',
   props: {
+    course: Object,
     module: Object
   },
   computed: {
