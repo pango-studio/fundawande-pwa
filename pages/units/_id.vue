@@ -1,49 +1,38 @@
 <template>
   <div>
-    <Navbar></Navbar>
-    <div>
-      <HeaderBand></HeaderBand>
-    </div>
-    <Footer></Footer>
+    <HeaderBand></HeaderBand>
   </div>
 </template>
 
 <script>
 import HeaderBand from '../../components/HeaderBand'
 // import UnitCard from '../../components/UnitCard'
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer'
 
 import axios from 'axios'
 
 export default {
   name: 'SingleModulePage',
   components: {
-    Navbar,
-    HeaderBand,
+    HeaderBand
     // UnitCard,
-    Footer
   },
   async asyncData({ params }) {
+    var _id = params.id
+    var regex = /course_id=([0-9]{2,4})&module_id=([0-9]{2,4})/
+    var contents = _id.match(regex)
+    var course_id = contents[1]
+    var module_id = contents[2]
+
     const units = await axios.get(
-      'http://fundawande:7888/wp-json/lms/v1/units/'
+      `http://fundawande:7888/wp-json/lms/v1/units/course_id=${course_id}&module_id=${module_id}`
     )
     const module = await axios.get(
-      `http://fundawande:7888/wp-json/lms/v1/modules/1421`
+      `http://fundawande:7888/wp-json/lms/v1/modules/${course_id}`
     )
     return {
       units: units.data,
       module: module.data
-      // modules: modules.data
     }
-  },
-  created() {
-    var _id = this.$route.params.id
-    var regex = /(course_id=[0-9]{2,4})&(module_id=[0-9]{2,4})/
-    var contents = _id.match(regex)
-
-    this.course_id = contents[1]
-    this.module_id = contents[2]
   },
   head() {
     return {

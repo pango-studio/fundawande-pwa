@@ -1,35 +1,27 @@
 <template>
-  <div>
-    <Navbar></Navbar>
-    <div class="wrapper single-course-wrapper background-secondary" id="page-wrapper">
-      <HeaderBand v-bind:title="course.acf.course_title"></HeaderBand>
-      <div class="container">
-        <div class="row my-md-5">
-          <div class="col-12 mt-3" v-for="module in modules" v-bind:key="module.id">
-            <ModuleCard v-bind:module="module" v-bind:course="course"></ModuleCard>
-          </div>
+  <div class="wrapper single-course-wrapper background-secondary" id="page-wrapper">
+    <HeaderBand v-bind:title="course.acf.course_title"></HeaderBand>
+    <div class="container">
+      <div class="row my-md-5">
+        <div class="col-12 mt-3" v-for="module in modules" v-bind:key="module.id">
+          <ModuleCard v-bind:module="module" v-bind:course="course"></ModuleCard>
         </div>
       </div>
     </div>
-    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import HeaderBand from '../../components/HeaderBand'
 import ModuleCard from '../../components/ModuleCard'
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer'
 
 import axios from 'axios'
 
 export default {
   name: 'SingleCoursePage',
   components: {
-    Navbar,
     HeaderBand,
-    ModuleCard,
-    Footer
+    ModuleCard
   },
   async asyncData({ params }) {
     const course = await axios.get(
